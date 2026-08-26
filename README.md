@@ -16,8 +16,8 @@ This project reimplements Flappy Bird's core mechanics and gameplay loop in Unit
 
 - [x] Bird jump mechanic
 - [x] Bird animations
-- [ ] Pipes and obstacle system
-- [ ] Scoring system
+- [x] Pipes and obstacle system
+- [x] Scoring system
 - [ ] Collision detection / game over
 - [ ] Main menu and UI
 - [ ] Sound effects
