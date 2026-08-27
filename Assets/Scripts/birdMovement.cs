@@ -2,13 +2,21 @@ using System;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class birdMovement : MonoBehaviour
 {
     [SerializeField] private float jumpSpeed = 3f;
+    [SerializeField] private GameObject deathScreen;
+    [SerializeField] private GameManager gameManager;
+
+
     private Rigidbody2D rb2d;
     private void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
+        deathScreen.SetActive(false);
+        Time.timeScale = 1f;
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -24,9 +32,13 @@ public class birdMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        gameManager.hideScoreText();
         if (other.gameObject.tag == "Pipe") 
         {
-            gameObject.SetActive(false);
+            Time.timeScale = 0f;
+            deathScreen.SetActive(true);
+            gameManager.scoreCardStats();
+
         }
     }
 
@@ -35,7 +47,7 @@ public class birdMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "ScoreArea") 
         {
-            FindAnyObjectByType<GameManager>().increaseScore();
+            gameManager.increaseScore();
         }
     }
 
