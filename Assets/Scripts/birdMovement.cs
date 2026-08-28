@@ -9,6 +9,9 @@ public class birdMovement : MonoBehaviour
     [SerializeField] private float jumpSpeed = 3f;
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private AudioSource dieSFX;
+    [SerializeField] private AudioSource pointSFX;
+    [SerializeField] private AudioSource jumpSFX;
 
 
     private Rigidbody2D rb2d;
@@ -25,6 +28,7 @@ public class birdMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) //Jump when press space or use left click
         {
             rb2d.linearVelocity = Vector2.up * jumpSpeed;
+            jumpSFX.Play();
         }
 
 
@@ -38,6 +42,7 @@ public class birdMovement : MonoBehaviour
             Time.timeScale = 0f;
             deathScreen.SetActive(true);
             gameManager.scoreCardStats();
+            dieSFX.Play();
 
         }
     }
@@ -48,6 +53,7 @@ public class birdMovement : MonoBehaviour
         if (other.gameObject.tag == "ScoreArea") 
         {
             gameManager.increaseScore();
+            pointSFX.Play();
         }
     }
 

@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         score = 0;
-        scoreText.text = score.ToString();
+        scoreText.text = score.ToString();        
     }
 
     public void increaseScore() //increase score method
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         scoreText.gameObject.SetActive(false);
     }
 
-    public void scoreCardStats() //
+    public void scoreCardStats() 
     {
         if (score > PlayerPrefs.GetInt("highScore")) //highscore system
         {
@@ -39,15 +39,16 @@ public class GameManager : MonoBehaviour
         scoreCardText.text = score.ToString();
     }
 
-
-
+    
     public void StartGame() 
     {
         SceneManager.LoadScene("Game");
+        BackgroundMusic.instance.gameObject.GetComponent<AudioSource>().UnPause();
     }
 
     public void MainMenu() 
     {
         SceneManager.LoadScene("MainMenu");
+        BackgroundMusic.instance.gameObject.GetComponent<AudioSource>().UnPause();
     }
 }
