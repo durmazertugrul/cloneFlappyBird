@@ -1,10 +1,10 @@
-# cloneFlappyBird
+# FlappyBird -Clone
 
 A Unity recreation of the classic Flappy Bird, built with C#.
 
 ## Overview
 
-This project reimplements Flappy Bird's core mechanics and gameplay loop in Unity, developed as a hands-on exercise in game programming and iterative development.
+This project reimplements Flappy Bird's core mechanics and gameplay loop in Unity. It was developed as a hands-on exercise in game programming, covering physics-based movement, procedural obstacle generation, UI flow, and audio integration.
 
 ## Tech Stack
 
@@ -14,13 +14,13 @@ This project reimplements Flappy Bird's core mechanics and gameplay loop in Unit
 
 ## Features
 
-- [x] Bird jump mechanic
-- [x] Bird animations
-- [x] Pipes and obstacle system
-- [x] Scoring system
-- [ ] Collision detection / game over
-- [ ] Main menu and UI
-- [ ] Sound effects
+- Bird jump mechanic with physics-based movement
+- Bird animations
+- Procedurally spawning pipes and obstacle system
+- Scoring system
+- Collision detection and game over state
+- Main menu and UI
+- Background music and sound effects
 
 ## Getting Started
 
@@ -30,4 +30,4 @@ This project reimplements Flappy Bird's core mechanics and gameplay loop in Unit
 
 ## License
 
-This project is for educational purposes and is not affiliated with or endorsed by the original Flappy Bird creators.
+This project is for educational purposes only and is not affiliated with or endorsed by the original Flappy Bird creators.
