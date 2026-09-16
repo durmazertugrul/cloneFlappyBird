@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PipeMovement : MonoBehaviour
 {
-    [SerializeField] private float pipeSpeed = 3f;
+    [SerializeField] public float pipeSpeed = 3f;
     private void Update()
     {
         transform.position += Vector3.left * pipeSpeed * Time.deltaTime;

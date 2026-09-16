@@ -4,6 +4,7 @@ using UnityEngine;
 public class PipeSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject Pipes;
+    [SerializeField] private GameManager gameManager;
 
     [SerializeField] private float spawnTime = 1.8f;
     [SerializeField] private float height = 1.2f;
@@ -17,7 +18,8 @@ public class PipeSpawner : MonoBehaviour
     {
         while (true) 
         {
-            Instantiate(Pipes, new Vector3(3f, Random.Range(-height, height),0), Quaternion.identity);
+            GameObject newPipe = Instantiate(Pipes, new Vector3(3f, Random.Range(-height, height),0), Quaternion.identity);
+            newPipe.GetComponent<PipeMovement>().pipeSpeed = gameManager.currentPipeSpeed;
 
             yield return new WaitForSeconds(spawnTime);
         }
